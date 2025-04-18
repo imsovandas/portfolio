@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Admin Dashboard{% endblock %} - Sovan Das Portfolio</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4ECCA3;
+            --dark-color: #1A1A2E;
+            --light-dark-color: #222244;
+            --text-color: #EEEEEE;
+            --gray-color: #AAAAAA;
+            --light-gray: #333366;
+            --danger-color: #e3342f;
+            --success-color: #38c172;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --font-primary: 'Poppins', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Admin Header */
+        .admin-header {
+            background-color: var(--light-dark-color);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .admin-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .admin-nav {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .admin-nav a {
+            padding: 5px 10px;
+            transition: var(--transition);
+        }
+        
+        .admin-nav a:hover {
+            color: var(--text-color);
+        }
+        
+        /* Main Content */
+        .admin-content {
+            padding: 40px 0;
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--light-gray);
+            padding-bottom: 10px;
+        }
+        
+        /* Cards */
+        .card {
+            background-color: var(--light-dark-color);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .card-header {
+            background-color: rgba(78, 204, 163, 0.1);
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--light-gray);
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        /* Alerts */
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .alert-success {
+            background-color: rgba(56, 193, 114, 0.1);
+            border-left: 4px solid var(--success-color);
+            color: var(--success-color);
+        }
+        
+        .alert-danger {
+            background-color: rgba(227, 52, 47, 0.1);
+            border-left: 4px solid var(--danger-color);
+            color: var(--danger-color);
+        }
+        
+        /* Forms */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(78, 204, 163, 0.2);
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #3cb38c;
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: var(--text-color);
+        }
+        
+        .btn-danger:hover {
+            background-color: #cc1f1a;
+        }
+        
+        /* Tables */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .table th,
+        .table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .table th {
+            background-color: rgba(78, 204, 163, 0.1);
+            font-weight: 600;
+        }
+        
+        .table tr:hover {
+            background-color: rgba(78, 204, 163, 0.05);
+        }
+        
+        .table .actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .admin-header .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .admin-nav {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-logo">
+                <a href="/admin/messages">Sovan Das Admin</a>
+            </div>
+            <nav class="admin-nav">
+                <a href="/admin/messages">Messages</a>
+                <a href="/admin/logout">Logout</a>
+                <a href="/" target="_blank">View Site</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="admin-content">
+        <div class="container">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+    
+    <script>
+        // Auto-dismiss alerts after 5 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            const alerts = document.querySelectorAll('.alert');
+            
+            alerts.forEach(alert => {
+                setTimeout(() => {
+                    alert.style.opacity = '0';
+                    alert.style.transform = 'translateY(-10px)';
+                    
+                    setTimeout(() => {
+                        alert.remove();
+                    }, 300);
+                }, 5000);
+            });
+        });
+    </script>
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>

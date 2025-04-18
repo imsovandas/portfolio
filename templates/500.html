@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Server Error</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #4ECCA3;
+            --dark-color: #1A1A2E;
+            --light-dark-color: #222244;
+            --text-color: #EEEEEE;
+            --gray-color: #AAAAAA;
+            --error-color: #e3342f;
+            --font-primary: 'Poppins', sans-serif;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--dark-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .error-container {
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--error-color);
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(227, 52, 47, 0.3);
+        }
+        
+        .error-message {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        
+        .error-description {
+            font-size: 1.1rem;
+            color: var(--gray-color);
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--dark-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .icon-server {
+            font-size: 3rem;
+            color: var(--error-color);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container">
+        <i class="fas fa-server icon-server"></i>
+        <h1 class="error-code">500</h1>
+        <h2 class="error-message">Server Error</h2>
+        <p class="error-description">Sorry, something went wrong on our end. We're working to fix the issue.</p>
+        <a href="/" class="btn">Back to Homepage</a>
+    </div>
+</body>
+</html>

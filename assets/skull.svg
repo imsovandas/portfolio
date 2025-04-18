@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="800px" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Human-Skull" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Background" fill="#1e1e1e" x="0" y="0" width="800" height="800" rx="400"></rect>
+        
+        <!-- Skull outline -->
+        <path d="M400,100 C539.746,100 653,220 653,370 C653,435 630,490 580,530 C570,540 560,550 550,570 L530,600 L520,620 L510,650 L505,670 L500,680 L480,700 L460,710 L440,715 L420,718 L400,720 L380,718 L360,715 L340,710 L320,700 L300,680 L295,670 L290,650 L280,620 L270,600 L250,570 L240,550 L230,540 L220,530 L200,500 L180,470 L170,440 L160,410 L150,370 C150,220 260.254,100 400,100 Z" 
+              id="Skull" stroke="#4ecca3" stroke-width="10" fill="#1e1e1e"></path>
+        
+        <!-- Eye sockets -->
+        <ellipse id="Left-Eye-Socket" stroke="#4ecca3" stroke-width="8" cx="320" cy="370" rx="70" ry="60"></ellipse>
+        <ellipse id="Right-Eye-Socket" stroke="#4ecca3" stroke-width="8" cx="480" cy="370" rx="70" ry="60"></ellipse>
+        
+        <!-- Nasal cavity -->
+        <path d="M380,450 L400,520 L420,450" id="Nose-Cavity" stroke="#4ecca3" stroke-width="8"></path>
+        <path d="M380,450 C380,440 420,440 420,450" id="Nose-Bridge" stroke="#4ecca3" stroke-width="8"></path>
+        
+        <!-- Jaw and teeth -->
+        <path d="M300,560 L320,580 L340,590 L360,595 L380,598 L400,600 L420,598 L440,595 L460,590 L480,580 L500,560" 
+              id="Jaw" stroke="#4ecca3" stroke-width="8" fill="none"></path>
+        
+        <!-- Teeth -->
+        <path d="M320,580 L320,600" stroke="#4ecca3" stroke-width="3"></path>
+        <path d="M340,590 L340,610" stroke="#4ecca3" stroke-width="3"></path>
+        <path d="M360,595 L360,615" stroke="#4ecca3" stroke-width="3"></path>
+        <path d="M380,598 L380,618" stroke="#4ecca3" stroke-width="3"></path>
+        <path d="M400,600 L400,620" stroke="#4ecca3" stroke-width="3"></path>
+        <path d="M420,598 L420,618" stroke="#4ecca3" stroke-width="3"></path>
+        <path d="M440,595 L440,615" stroke="#4ecca3" stroke-width="3"></path>
+        <path d="M460,590 L460,610" stroke="#4ecca3" stroke-width="3"></path>
+        <path d="M480,580 L480,600" stroke="#4ecca3" stroke-width="3"></path>
+        
+        <!-- Cranial cracks -->
+        <path d="M400,150 L400,220" stroke="#4ecca3" stroke-width="2"></path>
+        <path d="M350,180 L450,180" stroke="#4ecca3" stroke-width="2"></path>
+        <path d="M300,230 L330,260" stroke="#4ecca3" stroke-width="2"></path>
+        <path d="M500,230 L470,260" stroke="#4ecca3" stroke-width="2"></path>
+    </g>
+</svg>
